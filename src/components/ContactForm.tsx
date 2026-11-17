@@ -55,22 +55,20 @@ export default function ContactForm() {
         <textarea id="cf-msg" required rows={4} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="A few lines about your idea or problem" className={`${field} resize-none`} />
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-1">
-        <button type="submit" className="btn-primary">
+      <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
+        <button type="submit" className="btn-primary w-full justify-center sm:w-auto">
           {sent ? "Opening your email app…" : "Send message"} <span aria-hidden>↗</span>
         </button>
-        <a href={tel} className="group flex items-center gap-3 text-sm text-bone/70 transition-colors hover:text-saffron">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-line transition-colors group-hover:border-saffron">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
-            </svg>
-          </span>
-          <span>Prefer to talk?<br /><span className="text-bone">{site.phone}</span></span>
+        <a href={tel} className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-line px-6 py-[0.95rem] text-[0.95rem] text-bone/80 transition-colors hover:border-saffron hover:text-saffron sm:w-auto">
+          <svg viewBox="0 0 24 24" className="h-4 w-4 text-saffron" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+          </svg>
+          Call {site.phone}
         </a>
       </div>
 
       <p className="text-xs leading-relaxed text-bone/45">
-        This opens your email app with everything filled in. Just press send.
+        Opens your email app with everything filled in.
         {sent && <> Nothing opened? Write to <a className="text-saffron underline" href={`mailto:${site.email}`}>{site.email}</a>.</>}
       </p>
     </form>
