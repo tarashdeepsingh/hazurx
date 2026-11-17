@@ -32,10 +32,10 @@ export default function AboutStory() {
           </Reveal>
         </div>
 
-        <div className="mx-auto mt-20 grid max-w-7xl gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-20 grid max-w-7xl gap-px overflow-hidden rounded-3xl border border-line bg-line grid-cols-2 lg:grid-cols-4">
           {aboutStats.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.08}>
-              <div className="h-full bg-ink/70 p-7 backdrop-blur-xl">
+              <div className="h-full bg-ink/70 p-5 backdrop-blur-xl sm:p-7">
                 <p className="display grad-text text-[clamp(2.08rem,3.1vw,2.72rem)]"><StatValue v={s.v} /></p>
                 <p className="eyebrow mt-3 max-w-[14rem]">{s.l}</p>
               </div>

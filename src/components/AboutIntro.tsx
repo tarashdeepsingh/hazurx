@@ -56,7 +56,7 @@ export default function AboutIntro() {
           <motion.div
             aria-hidden
             style={{ x: ringX }}
-            className="pointer-events-none absolute bottom-[8%] left-1/2 aspect-square w-[min(112%,520px)] -translate-x-1/2 rounded-full border border-saffron/30 bg-[radial-gradient(circle_at_50%_55%,rgba(255,180,84,0.26),rgba(255,138,61,0.06)_55%,transparent_70%)]"
+            className="pointer-events-none absolute bottom-[8%] left-1/2 aspect-square w-[82%] sm:w-[min(112%,520px)] -translate-x-1/2 rounded-full border border-saffron/30 bg-[radial-gradient(circle_at_50%_55%,rgba(255,180,84,0.26),rgba(255,138,61,0.06)_55%,transparent_70%)]"
           >
             <span className="absolute inset-[9%] rounded-full border border-dashed border-line" style={{ animation: "spin-slow 60s linear infinite" }} />
           </motion.div>

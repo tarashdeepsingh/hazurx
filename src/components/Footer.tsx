@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="display text-2xl">HAZUR<span className="text-saffron">X</span></p>
           <p className="mt-3 max-w-xs text-sm text-bone/50">Software studio. Web, mobile and backend.</p>
         </div>
-        <nav className="flex gap-12 text-sm text-bone/70">
+        <nav className="grid grid-cols-2 gap-x-6 text-sm text-bone/70 md:flex md:gap-12">
           <div className="flex flex-col gap-3">
             <Link href="/" className="hover:text-bone">Home</Link>
             <Link href="/services" className="hover:text-bone">Services</Link>

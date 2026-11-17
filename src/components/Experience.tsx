@@ -39,7 +39,7 @@ export default function Experience() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">
-          <div className="grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 border-t border-line lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="py-7 pr-6 lg:border-r lg:border-line lg:pl-7 lg:first:pl-0 lg:last:border-r-0">
                 <p className="display grad-text text-[clamp(2rem,3.2vw,2.6rem)]"><Counter value={s.value} suffix={s.suffix} decimals={s.value % 1 ? 1 : 0} /></p>
