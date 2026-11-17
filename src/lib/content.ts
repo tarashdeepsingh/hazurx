@@ -190,41 +190,25 @@ export const projects: Project[] = [
 ];
 
 export type Highlight = { m: string; t: string; d: string };
-export const experience: { role: string; focus: string; period: string; start: string; end: string; months: number; highlights: Highlight[] }[] = [
-  {
-    role: "Software Developer, Backend",
-    focus: "Real-time bidding, billing & lead platforms",
-    period: "Jul 2025 to present",
-    start: "Jul 2025",
-    end: "Now",
-    months: 16,
-    highlights: [
-      { m: "6+", t: "Business verticals", d: "Architected a multi-tenant, distributed real-time bidding platform: auction orchestration, bid decisioning, eligibility rules, lead routing, lifecycle management and RBAC." },
-      { m: "15+", t: "Buyers onboarded", d: "Built buyer onboarding and auctions: API onboarding, dynamic pricing, Ping/Post and Direct Post bid evaluation, prioritisation and automated lead allocation." },
-      { m: "150+", t: "Agents in 4 months", d: "Created a flexible billing architecture (prepaid, postpaid, SaaS plans, paid seats, trials, credits, payment recovery, pooled usage, hierarchical teams) that onboarded 150+ agents in four months." },
-      { m: "1,500+", t: "Assets restored", d: "Restored 1,500+ deleted campaign assets during a critical production incident, limiting downtime and revenue impact." },
-      { m: "10+", t: "Risk signals", d: "Established a lead-quality and fraud framework on 10+ risk and identity signals, and monetised unsold leads through a clickwall." },
-      { m: "AI", t: "Lead engagement", d: "Shipped an AI lead-engagement and scheduling flow with Retell AI, Twilio and Brevo: voice, email and SMS, live calendar checks and automated booking." },
-      { m: "Async", t: "Fault-tolerant workflows", d: "Designed event-driven lead workflows with queues, webhooks, retries and CRM integrations, so work continues when something fails." },
-      { m: "Lead", t: "Engineering ownership", d: "Led engineering work across teams: requirements, prioritisation and end-to-end delivery." },
-    ],
-  },
-  {
-    role: "Junior Software Engineer",
-    focus: "National-scale dashboards & platforms",
-    period: "Oct 2023 to Jul 2025",
-    start: "Oct 2023",
-    end: "Jul 2025",
-    months: 21,
-    highlights: [
-      { m: "95+", t: "Countries served", d: "Built and deployed backend and full-stack modules in Django, Next.js and Redis, powering an Excel-like interface for users in 95+ countries." },
-      { m: "100K+", t: "Users imported", d: "Designed queued background processing in Laravel to import 100,000+ users from Excel with minimal application load." },
-      { m: "NCERT", t: "Production deployment", d: "Deployed the complete PARAKH ecosystem on official NCERT servers: integration, scalability and reliable operation across modules." },
-      { m: "20%", t: "Faster delivery", d: "Worked with CXOs and cross-functional teams, improving alignment and cutting delivery time by 20%." },
-      { m: "60%", t: "Of projects reuse it", d: "Centralised email into a Laravel Lumen microservice that is reused across 60% of projects." },
-    ],
-  },
-];
+export const experience: { role: string; focus: string; start: string; highlights: Highlight[] } = {
+  role: "Software Developer",
+  focus: "Backend and full-stack engineering across real-time platforms, billing systems and national-scale dashboards.",
+  start: "Oct 2023",
+  highlights: [
+    { m: "6+", t: "Business verticals", d: "Architected a multi-tenant, distributed real-time bidding platform: auction orchestration, bid decisioning, eligibility rules, lead routing, lifecycle management and RBAC." },
+    { m: "150+", t: "Agents in 4 months", d: "Created a flexible billing architecture (prepaid, postpaid, SaaS plans, paid seats, trials, credits, payment recovery, pooled usage, hierarchical teams) that onboarded 150+ agents in four months." },
+    { m: "95+", t: "Countries served", d: "Built and deployed backend and full-stack modules in Django, Next.js and Redis, powering an Excel-like interface for users in 95+ countries." },
+    { m: "100K+", t: "Users imported", d: "Designed queued background processing in Laravel to import 100,000+ users from Excel with minimal application load." },
+    { m: "15+", t: "Buyers onboarded", d: "Built buyer onboarding and auctions: API onboarding, dynamic pricing, Ping/Post and Direct Post bid evaluation, prioritisation and automated lead allocation." },
+    { m: "1,500+", t: "Assets restored", d: "Restored 1,500+ deleted campaign assets during a critical production incident, limiting downtime and revenue impact." },
+    { m: "10+", t: "Risk signals", d: "Established a lead-quality and fraud framework on 10+ risk and identity signals, and monetised unsold leads through a clickwall." },
+    { m: "NCERT", t: "Production deployment", d: "Deployed the complete PARAKH ecosystem on official NCERT servers: integration, scalability and reliable operation across modules." },
+    { m: "AI", t: "Lead engagement", d: "Shipped an AI lead-engagement and scheduling flow with Retell AI, Twilio and Brevo: voice, email and SMS, live calendar checks and automated booking." },
+    { m: "Async", t: "Fault-tolerant workflows", d: "Designed event-driven lead workflows with queues, webhooks, retries and CRM integrations, so work continues when something fails." },
+    { m: "20%", t: "Faster delivery", d: "Worked with CXOs and cross-functional teams, improving alignment and cutting delivery time by 20%." },
+    { m: "60%", t: "Of projects reuse it", d: "Centralised email into a Laravel Lumen microservice that is reused across 60% of projects." },
+  ],
+};
 
 export const stats = [
   { value: 2.3, suffix: "M+", label: "students reached", decimals: 1 },

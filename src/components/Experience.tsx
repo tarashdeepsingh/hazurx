@@ -4,15 +4,15 @@ import { experience } from "@/lib/content";
 import Counter from "./Counter";
 import Reveal from "./Reveal";
 
-const START = new Date(2023, 9, 1); // Oct 2023: first professional role
+const START = new Date(2023, 9, 1); // Oct 2023
 
-function fmt(m: number) {
-  const y = Math.floor(m / 12), r = m % 12;
-  return [y && `${y} yr${y > 1 ? "s" : ""}`, r && `${r} mo`].filter(Boolean).join(" ") || "< 1 mo";
-}
 function monthsSince(from: Date) {
   const now = new Date();
   return Math.max(0, (now.getFullYear() - from.getFullYear()) * 12 + now.getMonth() - from.getMonth());
+}
+function fmt(m: number) {
+  const y = Math.floor(m / 12), r = m % 12;
+  return [y && `${y} yr${y > 1 ? "s" : ""}`, r && `${r} mo`].filter(Boolean).join(" ") || "< 1 mo";
 }
 
 const stats: { value: number; suffix: string; label: string }[] = [
@@ -24,70 +24,54 @@ const stats: { value: number; suffix: string; label: string }[] = [
 
 export default function Experience() {
   // computed after mount so the numbers stay current without freezing at build time
-  const [years, setYears] = useState(3);
-  const [current, setCurrent] = useState(experience[0].months);
-  useEffect(() => {
-    setYears(Math.max(1, Math.floor(monthsSince(START) / 12)));
-    setCurrent(monthsSince(new Date(2025, 6, 1)));
-  }, []);
+  const [months, setMonths] = useState(37);
+  useEffect(() => setMonths(monthsSince(START)), []);
+  const years = Math.max(1, Math.floor(months / 12));
 
   return (
     <section id="experience" className="theme-ink px-5 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
       <div className="mx-auto max-w-6xl">
-        {/* the answer, up front */}
         <Reveal>
           <p className="tag mb-4">// experience</p>
           <h1 className="display max-w-3xl text-[clamp(1.9rem,3.8vw,3.2rem)] leading-[1.08]">
             <span className="grad-text">{years}+ years</span> building software that runs in production.
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-bone/60 md:text-base">
-            Backend and full-stack engineer. Real-time bidding platforms, billing systems, and national-scale dashboards, from design to deployment.
-          </p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (
-              <div key={s.label} className="bg-ink/70 p-6 backdrop-blur-xl">
+              <div key={s.label} className="py-7 pr-6 lg:border-r lg:border-line lg:pl-7 lg:first:pl-0 lg:last:border-r-0">
                 <p className="display grad-text text-[clamp(2rem,3.2vw,2.6rem)]"><Counter value={s.value} suffix={s.suffix} decimals={s.value % 1 ? 1 : 0} /></p>
-                <p className="eyebrow mt-2 max-w-[14rem]">{s.label}</p>
+                <p className="eyebrow mt-2 max-w-[13rem]">{s.label}</p>
               </div>
             ))}
           </div>
         </Reveal>
 
-        {/* roles: everything visible, nothing to click */}
-        <div className="mt-20 md:mt-28">
-          <Reveal><p className="tag mb-8">// where</p></Reveal>
-          <div className="relative space-y-14">
-            <span aria-hidden className="absolute bottom-2 left-[5px] top-2 hidden w-px bg-gradient-to-b from-saffron via-line to-transparent md:block" />
-            {experience.map((r, idx) => (
-              <Reveal key={r.role}>
-                <div className="relative grid gap-6 md:grid-cols-[13rem_1fr] md:gap-10 md:pl-10">
-                  <span aria-hidden className="absolute left-0 top-1.5 hidden h-[11px] w-[11px] rounded-full border-2 border-saffron bg-ink md:block" />
-                  <div>
-                    <p className="tag"><b>{idx === 0 ? "now" : "then"}</b> · {r.start} → {r.end}</p>
-                    <p className="mt-2 text-sm text-bone/55">{fmt(idx === 0 ? current : r.months)}</p>
+        {/* one role, everything visible */}
+        <div className="mt-16 grid gap-10 border-t border-line pt-14 lg:grid-cols-[0.8fr_2fr] lg:gap-16">
+          <Reveal>
+            <div className="lg:sticky lg:top-28">
+              <p className="tag"><b>{experience.start}</b> → Now · {fmt(months)}</p>
+              <h2 className="display mt-4 text-[clamp(1.7rem,3vw,2.4rem)] leading-tight">{experience.role}</h2>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-bone/60">{experience.focus}</p>
+            </div>
+          </Reveal>
+
+          <ul className="grid gap-x-12 sm:grid-cols-2">
+            {experience.highlights.map((h, i) => (
+              <li key={h.t}>
+                <Reveal delay={(i % 2) * 0.06}>
+                  <div className="border-t border-line py-6">
+                    <p className="display grad-text text-3xl leading-none">{h.m}</p>
+                    <p className="mt-3 text-sm font-medium text-bone">{h.t}</p>
+                    <p className="mt-1.5 text-[0.85rem] leading-relaxed text-bone/60">{h.d}</p>
                   </div>
-                  <div>
-                    <h2 className="display text-[clamp(1.4rem,2.4vw,1.9rem)] leading-tight">{r.role}</h2>
-                    <p className="mt-1.5 text-sm text-bone/55">{r.focus}</p>
-                    <ul className="mt-6 divide-y divide-line border-y border-line">
-                      {r.highlights.map((h) => (
-                        <li key={h.t} className="grid gap-x-6 gap-y-1 py-4 sm:grid-cols-[6.5rem_1fr]">
-                          <p className="display grad-text text-2xl leading-none sm:pt-0.5">{h.m}</p>
-                          <div>
-                            <p className="text-sm font-medium text-bone">{h.t}</p>
-                            <p className="mt-1 text-[0.85rem] leading-relaxed text-bone/60">{h.d}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>
