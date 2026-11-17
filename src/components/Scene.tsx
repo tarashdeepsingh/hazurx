@@ -4,6 +4,20 @@ import { Environment, Lightformer, MeshTransmissionMaterial, PointMaterial, Poin
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
+// @react-three/fiber 9.x still uses THREE.Clock internally and three.js now logs a deprecation
+// notice for it. It is harmless, so hide only that one message until R3F ships Timer support.
+if (typeof window !== "undefined") {
+  const w = window as unknown as { __hxWarn?: boolean };
+  if (!w.__hxWarn) {
+    w.__hxWarn = true;
+    const warn = console.warn.bind(console);
+    console.warn = (...args: unknown[]) => {
+      if (typeof args[0] === "string" && args[0].includes("THREE.Clock: This module has been deprecated")) return;
+      warn(...args);
+    };
+  }
+}
+
 // Scroll choreography for the glass X. x is a fraction of viewport width.
 const KF = [
   { p: 0, x: 0.26, y: 0.02, z: 0, s: 0.78, ry: 0, rz: 0 },
