@@ -10,7 +10,7 @@ export default function CaseStudies() {
       <div className="mx-auto max-w-6xl">
         <Reveal className="flex items-end justify-between gap-6">
           <div>
-            <p className="tag mb-4">// at scale</p>
+            <p className="tag mb-4">// professional work, at scale</p>
             <h2 className="display text-[clamp(1.6rem,3vw,2.4rem)]">Built for millions</h2>
           </div>
           <Link href="/work" className="link-u pb-1 text-sm">See our work →</Link>

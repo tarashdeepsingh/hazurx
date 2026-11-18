@@ -17,7 +17,7 @@ const gurmukhi = Noto_Sans_Gurmukhi({ variable: "--font-gurmukhi", subsets: ["gu
 export const metadata: Metadata = {
   title: "HAZURX · End-to-end software & product engineering",
   description:
-    "HAZURX is a founder-led software studio. One accountable team from requirements and design to development, deployment and support. Inspired by roots. Built for the future.",
+    "HAZURX is a founder-led software studio. One accountable engineering partner from requirements and design to development, deployment and support. Inspired by roots. Built for the future.",
   openGraph: {
     title: "HAZURX",
     description: "Inspired by roots. Built for the future.",

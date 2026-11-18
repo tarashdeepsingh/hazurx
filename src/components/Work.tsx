@@ -8,6 +8,7 @@ import Reveal from "./Reveal";
 import Tilt from "./Tilt";
 import PhoneFan from "./PhoneFan";
 
+const origin: Record<string, string> = { vetko: "HAZURX client project", ihpl: "HAZURX client project", parakh: "Professional work", unicef: "Professional work" };
 const byId = Object.fromEntries(projects.map((p) => [p.id, p])) as Record<string, Project>;
 const shot = (p: Project, k: string) => p.shots.find((s) => s.src.includes(k))!;
 
@@ -46,7 +47,7 @@ function Featured() {
     <Tilt className="glass rounded-3xl" max={1.5}>
       <div className="grid gap-8 p-6 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-10 md:p-10">
         <div>
-          <p className="tag">Featured project</p>
+          <p className="tag"><b>{origin[p.id]}</b> · Featured</p>
           <h2 className="display mt-3 text-[clamp(1.6rem,2.8vw,2.3rem)]">{p.name}</h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-bone/65 md:text-[0.95rem]">{p.outcome}</p>
           <div className="mt-5"><Tags items={p.stack} /></div>
@@ -88,7 +89,7 @@ function Card({ p }: { p: Project }) {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h3 className="display text-xl">{titles[p.id]}</h3>
-              <p className="tag mt-1.5">{p.kind}</p>
+              <p className="tag mt-1.5"><b>{origin[p.id]}</b> · {p.kind}</p>
             </div>
             <span aria-hidden className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-sm transition-all duration-300 group-hover:border-saffron group-hover:bg-saffron group-hover:text-ink">↗</span>
           </div>
@@ -107,7 +108,7 @@ export default function Work() {
         <Reveal>
           <p className="tag mb-4">// work</p>
           <h1 className="display text-[clamp(1.9rem,3.6vw,3rem)]">Selected work</h1>
-          <p className="mt-3 text-sm text-bone/55 md:text-base">Websites, platforms and apps, built end to end.</p>
+          <p className="mt-3 text-sm text-bone/55 md:text-base">Client projects delivered through HAZURX, and professional work at scale.</p>
         </Reveal>
 
         <Reveal delay={0.08} className="mt-10"><Featured /></Reveal>

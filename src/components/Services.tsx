@@ -98,7 +98,7 @@ export default function Services() {
           <Reveal>
             <p className="tag mb-4">// services</p>
             <h1 className="display text-[clamp(1.9rem,3.6vw,3rem)]">What we <span className="grad-text">build.</span></h1>
-            <p className="mt-3 max-w-lg text-sm text-bone/55 md:text-base">Six ways we can help, from a single page to a full platform. One accountable team, start to finish.</p>
+            <p className="mt-3 max-w-lg text-sm text-bone/55 md:text-base">Six ways we can help, from a single page to a full platform. One accountable engineering partner, start to finish.</p>
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((_, i) => <Card key={i} i={i} />)}

@@ -33,7 +33,7 @@ export default function Hero() {
         </h1>
         <div className="mt-8 flex flex-col gap-8">
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 1, ease }} className="max-w-md text-base leading-relaxed text-bone/70 md:text-base">
-            We build the software behind real businesses: ships, auctions, schools. Start to finish, one accountable team, no hand-offs.
+            We build the software behind real businesses: ships, auctions, schools. Start to finish, one accountable engineering partner, no hand-offs.
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="flex items-center gap-8">
             <Magnetic><Link href="/contact" className="btn-primary">Start a project <span aria-hidden>↗</span></Link></Magnetic>

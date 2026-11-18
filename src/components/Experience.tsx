@@ -17,8 +17,8 @@ function fmt(m: number) {
 
 const stats: { value: number; suffix: string; label: string }[] = [
   { value: 6, suffix: "+", label: "business verticals on one bidding platform" },
-  { value: 150, suffix: "+", label: "agents onboarded in 4 months" },
-  { value: 2.3, suffix: "M+", label: "students reached by dashboards we built" },
+  { value: 95, suffix: "+", label: "countries with active users" },
+  { value: 2.3, suffix: "M+", label: "students reached by national dashboards" },
   { value: 96, suffix: "%", label: "faster API data retrieval" },
 ];
 
@@ -32,7 +32,7 @@ export default function Experience() {
     <section id="experience" className="theme-ink px-5 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="tag mb-4">// experience</p>
+          <p className="tag mb-4">// professional experience</p>
           <h1 className="display max-w-3xl text-[clamp(1.9rem,3.8vw,3.2rem)] leading-[1.08]">
             <span className="grad-text">{years}+ years</span> building software that runs in production.
           </h1>

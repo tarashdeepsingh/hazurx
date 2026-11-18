@@ -5,8 +5,8 @@ import { projects } from "@/lib/content";
 import Reveal from "./Reveal";
 
 const picks = [
-  { id: "vetko", title: "Vetko Surveys", kind: "Website · Admin · Android app" },
-  { id: "parakh", title: "PARAKH Dashboard", kind: "Data dashboard · NCERT" },
+  { id: "vetko", title: "Vetko Surveys", kind: "HAZURX client project · Website, admin, Android app" },
+  { id: "parakh", title: "PARAKH Dashboard", kind: "Professional work · Data dashboard" },
 ].map((x) => ({ ...x, p: projects.find((p) => p.id === x.id)! }));
 
 export default function WorkPreview() {

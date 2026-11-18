@@ -196,7 +196,7 @@ export const experience: { role: string; focus: string; start: string; highlight
   start: "Oct 2023",
   highlights: [
     { m: "6+", t: "Business verticals", d: "Architected a multi-tenant, distributed real-time bidding platform: auction orchestration, bid decisioning, eligibility rules, lead routing, lifecycle management and RBAC." },
-    { m: "150+", t: "Agents in 4 months", d: "Created a flexible billing architecture (prepaid, postpaid, SaaS plans, paid seats, trials, credits, payment recovery, pooled usage, hierarchical teams) that onboarded 150+ agents in four months." },
+    { m: "Billing", t: "Flexible billing architecture", d: "Created a flexible billing architecture covering prepaid, postpaid, SaaS plans, paid seats, trials, credits, payment recovery, pooled usage and hierarchical teams." },
     { m: "95+", t: "Countries served", d: "Built and deployed backend and full-stack modules in Django, Next.js and Redis, powering an Excel-like interface for users in 95+ countries." },
     { m: "100K+", t: "Users imported", d: "Designed queued background processing in Laravel to import 100,000+ users from Excel with minimal application load." },
     { m: "15+", t: "Buyers onboarded", d: "Built buyer onboarding and auctions: API onboarding, dynamic pricing, Ping/Post and Direct Post bid evaluation, prioritisation and automated lead allocation." },
@@ -212,7 +212,7 @@ export const experience: { role: string; focus: string; start: string; highlight
 
 export const stats = [
   { value: 2.3, suffix: "M+", label: "students reached", decimals: 1 },
-  { value: 150, suffix: "+", label: "agents onboarded", decimals: 0 },
+  { value: 95, suffix: "+", label: "countries served", decimals: 0 },
   { value: 100, suffix: "K+", label: "users imported", decimals: 0 },
   { value: 96, suffix: "%", label: "faster APIs", decimals: 0 },
 ];
@@ -270,9 +270,9 @@ export const bio = {
   lead: "We like the hard parts of software: systems that have to be fast, correct, and still standing when something breaks.",
   paras: [
     "We like the hard parts of software: systems that have to be fast, correct, and still standing when something breaks.",
-    "We've built real-time bidding and lead-routing platforms across 6+ business verticals, billing that onboarded 150+ agents in four months, and national dashboards used by millions of students.",
+    "We've built real-time bidding and lead-routing platforms across 6+ business verticals, billing systems, and national dashboards used by millions of students.",
     "Our founder learned the craft in production, with real users, deadlines and the odd incident at midnight.",
-    "HAZURX is where we bring that same standard to client work: one accountable team, from the first conversation to the live server.",
+    "HAZURX is where we bring that same standard to client work: one accountable engineering partner, from the first conversation to the live server.",
   ],
   facts: [
     ["Based in", "India"],
@@ -284,15 +284,15 @@ export const bio = {
 
 export const aboutStats = [
   { v: "6+", l: "business verticals on one bidding platform" },
-  { v: "150+", l: "agents onboarded in 4 months" },
-  { v: "2.3M+", l: "students reached by dashboards we built" },
+  { v: "95+", l: "countries with active users" },
+  { v: "2.3M+", l: "students reached by national dashboards" },
   { v: "96%", l: "faster API data retrieval" },
 ];
 
 export const strengths = [
   { n: "01", title: "Backend & distributed systems", text: "Event-driven workflows, queues, webhooks and retries, designed to be fault-tolerant from day one." },
   { n: "02", title: "Real-time & high-load", text: "Auctions, bid decisioning and routing that stay fast. Caching, indexing and query tuning where it counts." },
-  { n: "03", title: "End-to-end delivery", text: "Requirements, design, build, deploy and support. Web, mobile and API, owned by one accountable team." },
+  { n: "03", title: "End-to-end delivery", text: "Requirements, design, build, deploy and support. Web, mobile and API, owned by one accountable engineering partner." },
 ];
 
 export const principlesStatement = "Smart work picks the target. Hard work hits it. We bring both.";
